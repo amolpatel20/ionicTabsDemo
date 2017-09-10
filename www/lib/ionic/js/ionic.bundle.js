@@ -59842,8 +59842,8 @@ function($scope, $element, $attrs, $compile, $controller, $ionicNavBarDelegate, 
       viewElement = viewElements.eq(x);
       if (navViewAttr(viewElement) == VIEW_STATUS_ACTIVE) {
         viewScope = viewElement.scope();
-        viewScope && viewScope.$emit(ev.name.replace('Tabs', 'View'), data);
-        viewScope && viewScope.$broadcast(ev.name.replace('Tabs', 'ParentView'), data);
+        viewScope && viewScope.$emit(ev.name.replace('tabs', 'View'), data);
+        viewScope && viewScope.$broadcast(ev.name.replace('tabs', 'ParentView'), data);
         break;
       }
     }
@@ -67243,7 +67243,7 @@ function($ionicTabsDelegate, $ionicConfig) {
           ev.stopPropagation();
           var previousSelectedTab = tabsCtrl.previousSelectedTab();
           if (previousSelectedTab) {
-            previousSelectedTab.$broadcast(ev.name.replace('NavView', 'Tabs'), data);
+            previousSelectedTab.$broadcast(ev.name.replace('NavView', 'tabs'), data);
           }
         }
 
